@@ -1,0 +1,3 @@
+cd ~/Desktop/sql_agent/sql-analyst
+docker compose up -d
+.venv/bin/uvicorn app.main:app
