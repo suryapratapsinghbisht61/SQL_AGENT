@@ -59,7 +59,8 @@ def execute(state: State) -> State:
     try:
         columns, rows = db.run_query(state["sql"])
     except Exception as e:  # any DB error goes back to the model to fix
-        return {"error": f"Query failed: {str(getattr(e, 'orig', e)).strip().splitlines()[0]}"}
+        first_line = str(getattr(e, "orig", e)).strip().partition("\n")[0]  # empty message must not IndexError
+        return {"error": f"Query failed: {first_line}"}
     return {"columns": columns, "rows": rows, "error": None}
 
 

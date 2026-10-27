@@ -1,11 +1,13 @@
-langgraph
-langchain-google-genai
+# Lower bounds = the majors this code is tested on (e.g. AIMessage.text is a property only in langchain-core 1.x).
+langgraph>=1.2
+langchain-google-genai>=4.4
+langchain-core>=1.0
 fastapi
 uvicorn
 httpx
-sqlalchemy
+sqlalchemy>=2.0
 psycopg2-binary
-sqlglot
-pydantic
+sqlglot>=30
+pydantic>=2
 python-dotenv
 pytest
